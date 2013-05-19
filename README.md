@@ -22,7 +22,14 @@ In Devleopment
 * MOAR SHORTCUTS!
   * Custom shortcuts
   * Volume control
-* Ideas?
+  * Focus
+  * Search
+  * Shuffle
+  * Repeat
+  * Playlists
+* Slight UI Modification
+  * To better suit desktop environment.
+* <Your ideas here>
 
 Contributing
 ------------
