@@ -19,6 +19,7 @@ Features
 
 In Devleopment
 ------------
+* Make it more portable
 * MOAR SHORTCUTS!
   * Custom shortcuts
   * Volume control
