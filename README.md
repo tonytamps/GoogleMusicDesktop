@@ -17,7 +17,7 @@ Features
 * Persistent session Cache
 * Persistent window size and position
 
-In Devleopment
+In Development
 ------------
 * Make it more portable
 * MOAR SHORTCUTS!
