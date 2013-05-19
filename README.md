@@ -29,7 +29,7 @@ In Devleopment
   * Playlists
 * Slight UI Modification
   * To better suit desktop environment.
-* <Your ideas here>
+* \<Your ideas here\>
 
 Contributing
 ------------
