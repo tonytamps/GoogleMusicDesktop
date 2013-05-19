@@ -1,0 +1,20 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Custom="http://schemas.awesomium.com/winfx"
+        xmlns:properties="clr-namespace:Google_Music_Desktop.Properties" x:Class="Google_Music_Desktop.MainWindow"
+        Title="Google Music Desktop" Height="661.5" Width="1110.5">
+    <Window.Resources>
+        <properties:Settings x:Key="MainWindowSettings" />
+        <ContextMenu x:Key="systemMenu">
+            <MenuItem Header="Maximise" Click="Maxamise"/>
+            <MenuItem Header="Restore" Click="Restore"/>
+            <MenuItem Header="Minimise" Click="Minimise"/>
+            <Separator />
+            <MenuItem Header="Settings" Click="Settings"/>
+            <Separator />
+            <MenuItem Header="Exit" Click="Exit"/>
+        </ContextMenu>
+    </Window.Resources>
+    <Custom:WebControl HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="Browser"/>
+</Window>
