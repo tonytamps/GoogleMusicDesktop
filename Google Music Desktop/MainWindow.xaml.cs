@@ -31,7 +31,6 @@ namespace Google_Music_Desktop
 
             InitializeComponent();
             CreateSession();
-            Browser.Source = new Uri("https://play.google.com/music/listen");
             Loaded += OnLoaded;
             SetupHotkeys();
         }
@@ -39,10 +38,53 @@ namespace Google_Music_Desktop
         private void CreateSession()
         {
             var dataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Chromium\\User Data";
-            var session = WebCore.Sessions[dataPath] ?? WebCore.CreateWebSession(dataPath, WebPreferences.Default);
+            var prefs = SetupWebPreferences();
 
-            Browser.WebSession = session;
+            Browser.WebSession  = WebCore.Sessions[dataPath] ?? WebCore.CreateWebSession(dataPath, prefs);
+            Browser.LoadingFrame += BrowserOnLoadingFrame;
+            Browser.Source = new Uri("https://play.google.com/music/listen");
         }
+
+        private void BrowserOnLoadingFrame(object sender, LoadingFrameEventArgs loadingFrameEventArgs)
+        {
+            if (loadingFrameEventArgs.IsMainFrame)
+            {
+                Browser.ZoomOut();
+            }
+        }
+
+        private WebPreferences SetupWebPreferences()
+        {
+            return new WebPreferences
+                {
+                    CustomCSS = @"
+                                    .gb_9.gb_wb.gb_f.gb_vb { display: none !important; } 
+                                    .explicit { display: none !important; }
+                                    #extra-links-container { display: none !important; }
+                                "
+                };
+        }
+
+//        public void InjectJQuery()
+//        {
+//            var injectCode =
+//                @"function InjectJquery(urlJQuery)
+//                {
+//                  if (typeof jQuery != 'undefined')
+//                    return;
+//
+//                  var scriptTag = document.createElement('script');
+//                  scriptTag.setAttribute('type', 'text/javascript');
+//                  scriptTag.setAttribute('src', urlJQuery);
+//                  scriptTag.onload = scriptTag.onreadystatechange = function (){};
+//                  document.head.appendChild(scriptTag);
+//                }
+//                InjectJquery('//ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.0.js');";
+//
+//            Browser.ExecuteJavascript(injectCode);
+//
+//            Browser.ExecuteJavascript("$('#gb .gb_9.gb_wb.gb_f.gb_vb').hide();");
+//        }
 
         private void SetupHotkeys()
         {
@@ -77,10 +119,7 @@ namespace Google_Music_Desktop
 
         public ContextMenu SystemMenu
         {
-            get
-            {
-                return Resources["systemMenu"] as ContextMenu;
-            }
+            get { return Resources["systemMenu"] as ContextMenu; }
         }
 
         private void ShowContextMenu()
@@ -108,7 +147,8 @@ namespace Google_Music_Desktop
 
         private void Settings(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Coming soon...");
+            var settings = new Settings();
+            settings.Show();
         }
 
         private void Maxamise(object sender, RoutedEventArgs e)
@@ -126,6 +166,12 @@ namespace Google_Music_Desktop
         private void Exit(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void About(object sender, RoutedEventArgs e)
+        {
+            var about = new About();
+            about.Show();
         }
     }
 }

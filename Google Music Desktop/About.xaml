@@ -1,0 +1,17 @@
+﻿<Window x:Class="Google_Music_Desktop.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="About" Height="300" Width="327"
+        Icon="google-music-beta-icon.ico"
+        ResizeMode="NoResize">
+    <Window.Background>
+        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+    </Window.Background>
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
+        </Grid.Background>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="249" Width="299"><Run Language="en-au" Text="Google Music Desktop is a wrapper for the Google Play Music All Access web application enabling better control in a desktop environment."/><LineBreak/><Run Language="en-au"/><LineBreak/><Run Language="en-au" Text="Global keyboard shortcuts/hotkeys:"/><LineBreak/><Run Language="en-au" Text="&#x9;Play/Pause &#x9;Ctrl + Alt + Up"/><LineBreak/><Run Language="en-au" Text="&#x9;Next &#x9;&#x9;Ctrl + Alt + Right"/><LineBreak/><Run Language="en-au" Text="&#x9;Previous&#x9;&#x9;Ctrl + Alt + Left"/><LineBreak/><Run Language="en-au" Text="&#x9;Like &#x9;&#x9;Ctrl + Alt + PageUp"/><LineBreak/><Run Language="en-au" Text="&#x9;Dislike&#x9;&#x9;Ctrl + Alt + PageDown"/><LineBreak/><Run Language="en-au"/><LineBreak/><Run Language="en-au"/><LineBreak/><Run Language="en-au" Text="By Tony Tamplin."/><LineBreak/><Run Language="en-au" Text="tonytamps@gmail.com"/><LineBreak/><Hyperlink Language="en-au" NavigateUri="http://github.com/tonytamps/GoogleMusicDesktop" RequestNavigate="Hyperlink_RequestNavigate">http://github.com/tonytamps/GoogleMusicDesktop</Hyperlink></TextBlock>
+
+    </Grid>
+</Window>

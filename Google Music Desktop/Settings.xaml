@@ -1,0 +1,14 @@
+﻿<Window x:Class="Google_Music_Desktop.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Settings" Height="374" Width="624"
+        Icon="google-music-beta-icon.ico"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
+        </Grid.Background>
+        <TextBlock HorizontalAlignment="Center" Height="23" Margin="10,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="277"><Run Language="en-au" Text="I'll get to settings soon... Feel free to send requests."/></TextBlock>
+
+    </Grid>
+</Window>

@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Custom="http://schemas.awesomium.com/winfx"
         xmlns:properties="clr-namespace:Google_Music_Desktop.Properties" x:Class="Google_Music_Desktop.MainWindow"
-        Title="Google Music Desktop" Height="661.5" Width="1110.5">
+        Title="Google Music Desktop" Height="661.5" Width="1110.5"
+        Icon="google-music-beta-icon.ico">
     <Window.Resources>
         <properties:Settings x:Key="MainWindowSettings" />
         <ContextMenu x:Key="systemMenu">
@@ -12,6 +13,8 @@
             <MenuItem Header="Minimise" Click="Minimise"/>
             <Separator />
             <MenuItem Header="Settings" Click="Settings"/>
+            <Separator />
+            <MenuItem Header="About" Click="About"/>
             <Separator />
             <MenuItem Header="Exit" Click="Exit"/>
         </ContextMenu>
