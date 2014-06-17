@@ -1,3 +1,5 @@
+Google released a "miniplayer" so this project is no longer maintained.
+
 GoogleMusicDesktop
 ==================
 
